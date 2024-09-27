@@ -5,38 +5,37 @@
 //  _ Bei Eingabe von "Beenden" soll das Programm beendet werden
 
 
-using System;
-using System.Globalization;
 
-namespace ReadConsole
+
+
+
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Numerics;
+
+string? inputString = "";
+
+while (true)
 {
-    class Program
+
+
+    Console.WriteLine("Um das Programm zu beenden, tippen Sie 'Beenden'.");
+    inputString = Console.ReadLine();
+
+    if (inputString == "Beenden")
     {
-        static void Main(string[] args)
-        {
-            string input = "";
-
-            while (true)
-            {
-
-                Console.WriteLine("Um das Programm zu enden tippen Sie Beenden");
-                input = Console.ReadLine();
-
-
-                if (input == "Beenden")
-                {
-                    Console.WriteLine("Programm endet:(");
-                    break;
-                }
-
-
-            }
-
-
-
-        }
+        Console.WriteLine("Programm wird beendet.");
+        break;
     }
+
+
+    Console.WriteLine(inputString);
 }
+
+
+
+
+
+
 
 
 
@@ -49,3 +48,25 @@ namespace ReadConsole
 // Ihr Programm soll dann die Eingabe in einen Integer konvertieren. 
 // Verschaffen Sie sich zuerst einen Überblick über die elementaren Datentypen von C# 
 // und wie sie diese "umwandeln" (konvertieren) können. 
+
+
+
+inputString = "";
+int inputInt = 0;
+
+
+while (true)
+{
+
+
+    Console.WriteLine("Geben Sie eine natürliche Zahl ein");
+    inputString = Console.ReadLine();
+    int.TryParse(inputString, out inputInt);
+    Console.WriteLine(inputInt + 1);
+
+}
+
+
+
+
+
