@@ -15,25 +15,17 @@ namespace ReadConsole
         static void Main(string[] args)
         {
             string input = "";
-
             while (true)
             {
-
                 Console.WriteLine("Um das Programm zu enden tippen Sie Beenden");
                 input = Console.ReadLine();
-
 
                 if (input == "Beenden")
                 {
                     Console.WriteLine("Programm endet:(");
                     break;
                 }
-
-
             }
-
-
-
         }
     }
 }
@@ -49,3 +41,5 @@ namespace ReadConsole
 // Ihr Programm soll dann die Eingabe in einen Integer konvertieren. 
 // Verschaffen Sie sich zuerst einen Überblick über die elementaren Datentypen von C# 
 // und wie sie diese "umwandeln" (konvertieren) können. 
+
+
