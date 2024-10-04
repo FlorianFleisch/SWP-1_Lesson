@@ -1,72 +1,66 @@
-﻿// Programmierauftrag 1 ((noch) keine Programmierübung == wird nicht bewertet)
-// Schreiben sie eine C# Konsolenanwendung welche
-// _ Eine Eingabe über die Tastatur einliest 
-//  _ mit <Enter> soll die Eingabe "abgeschlossen" werden und der eingegebene String auf der Konsole ausgegeben werden
-//  _ Bei Eingabe von "Beenden" soll das Programm beendet werden
+﻿// Programmieraufgabe 4:
 
+// Erweitern Sie ihre Konsolenanwendung in der Art, dass nach dem Einlesen der Natürlichen Zahl eine Abfrage erscheint, in der Sie eine Mathematische Operation auswählen können... Dies kann zum Beispiel so ausschauen:
+// Geben Sie eine Zahl zwischen 1 und 3 ein um eine Mathematische Operation auszuwählen:
+// 1) Quadrat
+// 2) Wurzel
+// 3) Fakultät
+// Verschaffen Sie sich zuerst einen Überblick über verfügbare Kontrollstrukturen in C# und wie Sie logische Terme definieren können (logische Verknüpfungsoperatoren).
 
+using System;
 
-
-
-
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.Numerics;
-
-string? inputString = "";
-
-while (true)
+namespace MyFirstConsoleApp
 {
-
-
-    Console.WriteLine("Um das Programm zu beenden, tippen Sie 'Beenden'.");
-    inputString = Console.ReadLine();
-
-    Console.WriteLine(inputString);
-
-
-    inputString = "";
-    int inputInt = 0;
-
-
-    inputString = Console.ReadLine();
-    int.TryParse(inputString, out inputInt);
-    Console.WriteLine(inputInt + 1);
-
-
-
-
-
-    Console.WriteLine("Geben Sie Zeichen aller art ein, sie werden identifiziert");
-    string input = Console.ReadLine();
-
-    if (bool.TryParse(input, out bool boolValue))
+    class Program
     {
-        Console.WriteLine("Der eingegebene Wert ist ein Boolean: " + boolValue);
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+
+                Console.WriteLine("Bitte geben Sie eine Zahl ein:");
+
+                if (int.TryParse(Console.ReadLine(), out int number))
+                {
+                    Console.WriteLine("Ihre Zahl ist jetz " + number);
+                    Console.WriteLine("Wählen Sie nun die Art der Operation die Sie mit " + number + "durchführen wollen");
+                    Console.WriteLine("1) Quadrat");
+                    Console.WriteLine("2) Wurzel");
+                    Console.WriteLine("3) Fakultät");
+
+                    if (int.TryParse(Console.ReadLine(), out int operation))
+                    {
+                        switch (operation)
+                        {
+                            case 1:
+                                Console.WriteLine($"Das Quadrat von {number} ist {Math.Pow(number, 2)}.");
+                                break;
+                            case 2:
+                                Console.WriteLine($"Die Wurzel von {number} ist {Math.Sqrt(number)}.");
+                                break;
+                            case 3:
+                                int Fakultät = number;
+                                for (int i = Fakultät - 1; i >= 1; i--)
+                                {
+                                    Fakultät = Fakultät * i;
+                                }
+                                Console.WriteLine($"Die Fakultät von {number} ist {Fakultät}.");
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error");
+
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Error");
+                }
+
+            }
+
+        }
     }
-
-    else if (double.TryParse(input, out double doubleValue))
-    {
-        Console.WriteLine("Der eingegebene Wert ist eine Kommazahl: " + doubleValue);
-    }
-
-    else if (int.TryParse(input, out int intValue))
-    {
-        Console.WriteLine("Der eingegebene Wert ist eine Ganzzahl: " + intValue);
-    }
-
-    else if (DateTime.TryParse(input, out DateTime dateTimeValue))
-    {
-        Console.WriteLine("Der eingegebene Wert ist ein Datum: " + dateTimeValue);
-    }
-
-
-    if (inputString == "Beenden")
-    {
-        Console.WriteLine("Programm wird beendet.");
-        break;
-    }
-
 }
-
-
-
