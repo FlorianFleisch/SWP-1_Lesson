@@ -46,21 +46,21 @@ namespace MyFirstConsoleApp
                                 }
                                 Console.WriteLine($"Die Fakultät von {number} ist {Fakultät}.");
                                 break;
+                            default:
+                                Console.WriteLine("Error");
+                                break;
                         }
                     }
                     else
                     {
                         Console.WriteLine("Error");
-
                     }
                 }
                 else
                 {
                     Console.WriteLine("Error");
                 }
-
             }
-
         }
     }
 }
