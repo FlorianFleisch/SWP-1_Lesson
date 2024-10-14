@@ -1,9 +1,20 @@
-﻿
-// PÜ 5
-// Programmieraufgabe 5: (Arbeiten mit Strings)
-// Schreiben Sie eine Konsolenanwendung die einen String einliest und die Anzahl an Selbstlauten (a,e,i,o,u) in dem String bestimmt und ausgibt.
+﻿// PA 6
+// Programmieraufgabe 6:
+// Erweitern Sie ihre Konsolenapplikation in der Art, dass zuerst eine mathematische Operation abgefragt wird:
+// Geben Sie die Entsprechende Nummer für die Auswahl einer mathematischen Operation an:
 
-// Machen Sie sich mit der Klasse String vertraut und schauen Sie sich die Operationen auf Strings an. Wie können Sie einen String "umkehren", wie vergleichen, wie mögliche Leerzeichen entfernen,...?
+// 1... Multiplizieren
+// 2... Dividieren
+// 3... Addieren
+// 4... Potenzieren
+// 5... Wurzelziehen
+// 6... Fakultät
+// 7... Invertieren
+
+// Je nach Auswahl soll im Anschluss entweder eine oder zwei Ganzzahlen eingelesen und die entsprechende mathematische Operation ausgeführt werden.
+
+// Achten Sie bei ihrer Implementierung auf Clean Code, machen Sie einen neuen Branch und dann einen sauberen PR.
+
 
 
 
@@ -18,22 +29,74 @@ namespace MyFirstConsoleApp
         {
             while (true)
             {
-                Console.WriteLine("Geben Sie eine Text eine String ein, ausgegeben werden dann die Selbstlaute Ihres Strings");
-                string userText = Console.ReadLine().ToLower();
-                char[] letters = userText.ToCharArray();
-                int anzahlSelbstlaute = 0;
+                Console.WriteLine("Wählen Sie zwischen folgenden Ops aus:");
+                Console.WriteLine("1... Multiplizieren");
+                Console.WriteLine("2... Dividieren");
+                Console.WriteLine("3... Addieren");
+                Console.WriteLine("4... Potenzieren");
+                Console.WriteLine("5... Wurzelziehen");
+                Console.WriteLine("6... Fakultät");
+                Console.WriteLine("7... Invertieren");
+                int operation = Convert.ToInt32(Console.ReadLine());
 
-                for (int i = 0; i < letters.Length; i++)
+                if (operation >= 1 && operation <= 4)
                 {
-                    if (letters[i] == 'a' || letters[i] == 'e' || letters[i] == 'i' || letters[i] == 'o' || letters[i] == 'u')
+                    Console.WriteLine("Bitte geben Sie die erste Zahl ein:");
+                    int number1 = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Bitte geben Sie die zweite Zahl ein:");
+                    int number2 = Convert.ToInt32(Console.ReadLine());
+
+                    switch (operation)
                     {
-                        Console.Write(letters[i] + " ");
-                        anzahlSelbstlaute++;
+                        case 1:
+                            Console.WriteLine($"{number1} * {number2} = {number1 * number2}");
+                            break;
+                        case 2:
+                            if (number2 != 0)
+                            {
+                                Console.WriteLine($"{number1} / {number2} = {(double)number1 / number2}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Division durch Null ist nicht erlaubt.");
+                            }
+                            break;
+                        case 3:
+                            Console.WriteLine($"{number1} + {number2} = {number1 + number2}");
+                            break;
+                        case 4:
+                            Console.WriteLine($"{number1} ^ {number2} = {Math.Pow(number1, number2)}");
+                            break;
                     }
                 }
-                Console.WriteLine();
-                Console.WriteLine($"Anzahl der Selbstlaute: {anzahlSelbstlaute}");
+                else if (operation == 5)
+                {
+                    Console.WriteLine("Bitte geben Sie eine nummer ein");
+                    int number3 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"Wurzel aus {number3} = {Math.Sqrt(number3)}");
+                }
+                else if (operation == 6)
+                {
+                    Console.WriteLine("Bitte geben Sie eine nummer ein");
+                    int number3 = Convert.ToInt32(Console.ReadLine());
+                    int Fakultät = number3;
+                    for (int i = Fakultät - 1; i >= 1; i--)
+                    {
+                        Fakultät = Fakultät * i;
+                    }
+                    Console.WriteLine($"Fakultät von {number3} = {Fakultät}");
+                }
+                else if (operation == 7)
+                {
+                    Console.WriteLine("Bitte geben Sie eine nummer ein");
+                    int number3 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"Invertiert {number3} = {-number3}");
+                }
             }
         }
     }
 }
+
+
+
