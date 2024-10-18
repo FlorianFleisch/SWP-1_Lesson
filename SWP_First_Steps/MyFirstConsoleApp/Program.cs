@@ -27,6 +27,7 @@ namespace MyFirstConsoleApp
     {
         static void Main(string[] args)
         {
+            int operation = 0;
             while (true)
             {
                 Console.WriteLine("Wählen Sie zwischen folgenden Ops aus:");
@@ -37,15 +38,18 @@ namespace MyFirstConsoleApp
                 Console.WriteLine("5... Wurzelziehen");
                 Console.WriteLine("6... Fakultät");
                 Console.WriteLine("7... Invertieren");
-                int operation = Convert.ToInt32(Console.ReadLine());
+                int.TryParse(Console.ReadLine(), out operation);
+                int number1 = 0;
+                int number2 = 0;
 
                 if (operation >= 1 && operation <= 4)
                 {
                     Console.WriteLine("Bitte geben Sie die erste Zahl ein:");
-                    int number1 = Convert.ToInt32(Console.ReadLine());
+                    int.TryParse(Console.ReadLine(), out number1);
+
 
                     Console.WriteLine("Bitte geben Sie die zweite Zahl ein:");
-                    int number2 = Convert.ToInt32(Console.ReadLine());
+                    int.TryParse(Console.ReadLine(), out number2);
 
                     switch (operation)
                     {
@@ -55,7 +59,7 @@ namespace MyFirstConsoleApp
                         case 2:
                             if (number2 != 0)
                             {
-                                Console.WriteLine($"{number1} / {number2} = {(double)number1 / number2}");
+                                Console.WriteLine($"{number1} / {number2} = {number1 / number2}");
                             }
                             else
                             {
@@ -97,6 +101,3 @@ namespace MyFirstConsoleApp
         }
     }
 }
-
-
-
