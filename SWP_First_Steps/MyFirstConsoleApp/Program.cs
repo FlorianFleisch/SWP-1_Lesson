@@ -101,6 +101,3 @@ namespace MyFirstConsoleApp
         }
     }
 }
-
-
-
