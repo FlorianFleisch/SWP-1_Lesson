@@ -38,6 +38,14 @@ namespace MyFirstConsoleApp
                 Console.WriteLine("5... Wurzelziehen");
                 Console.WriteLine("6... Fakultät");
                 Console.WriteLine("7... Invertieren");
+                Console.WriteLine("Wählen Sie zwischen folgenden Ops aus:");
+                Console.WriteLine("1... Multiplizieren");
+                Console.WriteLine("2... Dividieren");
+                Console.WriteLine("3... Addieren");
+                Console.WriteLine("4... Potenzieren");
+                Console.WriteLine("5... Wurzelziehen");
+                Console.WriteLine("6... Fakultät");
+                Console.WriteLine("7... Invertieren");
                 int.TryParse(Console.ReadLine(), out operation);
                 int number1 = 0;
                 int number2 = 0;
