@@ -6,12 +6,30 @@ namespace Objektorientiertes_Programmieren
     {
         static void Main(string[] args)
         {
-            // Erstellen eines Objekts der Klasse Cat
-            Cat myCat = new Cat(new DateTime(2022, 11, 8));
-            myCat.Color = "black";
+            Tierheim tierheim = new Tierheim();
 
-            // Aufrufen der Methode
-            Console.WriteLine("The Color of my Cat is " + myCat.Color + " and it is " + myCat.Age + " Years old...");  // Ausgabe: The color of my cat is black and she is 2 years old.
+            bool weiter = true;
+            while (weiter)
+            {
+                Console.WriteLine("Möchten Sie eine Katze hinzufügen? (ja/nein)");
+                string? antwort = Console.ReadLine()?.ToLower();
+
+                if (antwort == "ja")
+                {
+                    tierheim.AddCatFromInput();
+                }
+                else if (antwort == "nein")
+                {
+                    weiter = false;
+                }
+                else
+                {
+                    Console.WriteLine("Ungültige Eingabe. Bitte geben Sie 'ja' oder 'nein' ein.");
+                }
+            }
+
+            Console.WriteLine("\nAlle Katzen im Tierheim:");
+            tierheim.AlleKatzenVorstellen();
         }
     }
 }
