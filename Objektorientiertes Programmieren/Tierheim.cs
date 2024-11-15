@@ -11,12 +11,6 @@ namespace Objektorientiertes_Programmieren
         {
             cats = new List<Cat>();
         }
-
-        public void AddCat(Cat cat)
-        {
-            cats.Add(cat);
-        }
-
         public void AddCatFromInput()
         {
             try
@@ -38,8 +32,9 @@ namespace Objektorientiertes_Programmieren
                     Color = color
                 };
 
-                AddCat(newCat);
+                cats.Add(newCat);
                 Console.WriteLine("Die Katze wurde erfolgreich hinzugefügt.\n");
+
             }
             catch (Exception ex)
             {
@@ -51,7 +46,8 @@ namespace Objektorientiertes_Programmieren
         {
             foreach (var cat in cats)
             {
-                Console.WriteLine($"The Color of my Cat is {cat.Color} and it is {cat.Age} Years old...");
+                //Console.WriteLine($"The Color of my Cat is {cat.Color} and it is {cat.Age} Years old...");
+                Console.WriteLine(cat);
             }
         }
     }
