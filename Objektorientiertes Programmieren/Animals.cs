@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace MyFirstCat
+namespace Objektorientiertes_Programmieren
 {
-    class Animals
+    class Animal
     {
         public string Name { get; set; }
 
-        public Animals(string name) 
+        public Animal(string name) 
             {  Name = name; }
     }
 }
