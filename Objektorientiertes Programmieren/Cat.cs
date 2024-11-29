@@ -7,16 +7,6 @@ namespace Objektorientiertes_Programmieren
         private string? _Color;
         private DateTime _birthDate;
 
-        //public string Color
-        //{
-        //    get { return _Color; }
-        //    set
-        //    {
-        //        if (_Color == value) return;
-        //        _Color = value;
-        //    }
-        //}
-
         public string Color { get; set; }
         public int Age
         {
