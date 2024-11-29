@@ -15,6 +15,9 @@ namespace Objektorientiertes_Programmieren
         {
             try
             {
+                Console.Write("Geben Sie die Name der Katze ein: ");
+                string? name = Console.ReadLine();
+
                 Console.Write("Geben Sie die Farbe der Katze ein: ");
                 string? color = Console.ReadLine();
 
@@ -27,10 +30,7 @@ namespace Objektorientiertes_Programmieren
                 Console.Write("Geben Sie den Geburtstag der Katze ein (z.B. 20): ");
                 int day = int.Parse(Console.ReadLine() ?? "0");
 
-                Cat newCat = new Cat(new DateTime(year, month, day))
-                {
-                    Color = color
-                };
+                Cat newCat = new Cat(new DateTime(year, month, day), name, color);
 
                 cats.Add(newCat);
                 Console.WriteLine("Die Katze wurde erfolgreich hinzugefügt.\n");
@@ -46,7 +46,6 @@ namespace Objektorientiertes_Programmieren
         {
             foreach (var cat in cats)
             {
-                //Console.WriteLine($"The Color of my Cat is {cat.Color} and it is {cat.Age} Years old...");
                 Console.WriteLine(cat);
             }
         }

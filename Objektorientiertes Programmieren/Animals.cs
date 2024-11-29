@@ -1,12 +1,13 @@
-﻿using System;
+﻿using MyFirstCat;
+using System;
 
 namespace MyFirstCat
 {
-    class Animals
+    class Animals : Creatures
     {
         public string Name { get; set; }
 
-        public Animals(string name) 
+        public Animals(DateTime birthdate, string name) : base(birthdate)
             {  Name = name; }
     }
 }
