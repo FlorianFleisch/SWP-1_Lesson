@@ -5,15 +5,12 @@ namespace Objektorientiertes_Programmieren
 {
     class Cat : Animals
     {
-        private string? _Color;
 
-        public Cat(DateTime birthdate, string name = "undefined", string color = "undefined") : base(birthdate, name)
-        {
-            _Color = color;
-        }
+        public Cat(DateTime birthdate, string name = "undefined", string color = "undefined") : base(birthdate, name, color) { }
+
         public override string ToString()
         {
-            return $"{Name} is {_Color} and is {Age} Years old.";
+            return $"{Name} is {Color} and is {Age} Years old.";
         }
     }
 }
