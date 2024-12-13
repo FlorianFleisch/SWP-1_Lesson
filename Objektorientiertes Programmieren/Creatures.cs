@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyFirstCat
 {
-    class Creatures
+    public class Creatures
     {
         private DateTime _birthDate;
         private string? _Color;

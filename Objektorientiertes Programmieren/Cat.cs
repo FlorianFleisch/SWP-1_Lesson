@@ -3,7 +3,7 @@ using System;
 
 namespace Objektorientiertes_Programmieren
 {
-    class Cat : Animals
+    public class Cat : Animals
     {
 
         public Cat(DateTime birthdate, string name = "undefined", string color = "undefined") : base(birthdate, name, color) { }
