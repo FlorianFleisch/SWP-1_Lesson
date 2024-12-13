@@ -11,12 +11,12 @@ namespace Objektorientiertes_Programmieren
             bool weiter = true;
             while (weiter)
             {
-                Console.WriteLine("Möchten Sie eine Katze hinzufügen? (ja/nein)");
+                Console.WriteLine("Möchten Sie eine Katze oder Hnd Hinzufügen hinzufügen? (ja/nein)");
                 string? antwort = Console.ReadLine()?.ToLower();
 
                 if (antwort == "ja")
                 {
-                    tierheim.AddCatFromInput();
+                    tierheim.AddAnimal();
                 }
                 else if (antwort == "nein")
                 {
@@ -29,7 +29,7 @@ namespace Objektorientiertes_Programmieren
             }
 
             Console.WriteLine("\nAlle Katzen im Tierheim:");
-            tierheim.AlleKatzenVorstellen();
+            tierheim.AlleTiereVorstellen();
         }
     }
 }
