@@ -113,7 +113,6 @@ namespace Objektorientiertes_Programmieren
                 Console.WriteLine(animal);
             }
         }
-
         public int AnzahlTiere() { return Animals.Count; }
         public int AnzahlDogs() { return _Animals.Where(a => a.GetType() == typeof(Cat)).Count(); }
         public int AnzahlCats() { return _Animals.Where(a => a.GetType() == typeof(Dog)).Count(); }
