@@ -104,17 +104,26 @@ namespace Objektorientiertes_Programmieren
 
         public void AlleTiereVorstellen()
         {
-            Console.WriteLine("Katzen im Tierheim:");
+            Console.WriteLine("Tiere im Tierheim:");
             foreach (var animal in Animals)
             {
-                Console.WriteLine(AnzahlTiere());
-                Console.WriteLine(AnzahlCats());
-                Console.WriteLine(AnzahlDogs());
+                Console.WriteLine($"Es sind {AnzahlTiere} Tiere im Tierheim");
+                Console.WriteLine($"Es sind {AnzahlCats} Katzen im Tierheim");
+                Console.WriteLine($"Es sind {AnzahlDogs} Hunde im Tierheim");
                 Console.WriteLine(animal);
             }
+            double durchschnittsAlter = Animals.Average(a => a.Age);
+            Console.WriteLine($"\nDas Durchschnittsalter aller Tiere beträgt: {durchschnittsAlter:F1} Jahre.");
         }
         public int AnzahlTiere() { return Animals.Count; }
         public int AnzahlDogs() { return _Animals.Where(a => a.GetType() == typeof(Cat)).Count(); }
         public int AnzahlCats() { return _Animals.Where(a => a.GetType() == typeof(Dog)).Count(); }
+
+        public double DurchschnittsalterTiere()
+        {
+            if (Animals.Count == 0) return 0;
+
+            return Animals.Average(a => a.Age);
+        }
     }
 }
