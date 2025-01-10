@@ -1,12 +1,9 @@
 ﻿using System;
 
-namespace Objektorientiertes_Programmieren
+﻿namespace MyFirstCat
 {
-    class Animal
+    public class Animals : Creatures
     {
-        public string Name { get; set; }
-
-        public Animal(string name) 
-            {  Name = name; }
+        public Animals(DateTime birthdate, string name, string color) : base(birthdate, name, color) {}
     }
 }
