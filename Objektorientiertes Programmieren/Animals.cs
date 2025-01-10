@@ -1,3 +1,5 @@
+﻿using System;
+
 ﻿namespace MyFirstCat
 {
     public class Animals : Creatures
