@@ -1,19 +1,15 @@
-﻿using OOP_School;
-
-public class SchoolClasses : School
+﻿public class SchoolClass
 {
+    public List<SchoolClass> SchoolClasses { get; set; } = new List<SchoolClass>();
     public string ClassName { get; set; }
 
-    private List<Student> Students;
-    public void addStudentToClass(Student a)
-    {
-        Students.Add(a);
-    }
-
-    public SchoolClasses(string className, string schoolName, string schoolType, string schoolLocation)
-        : base(schoolName, schoolType, schoolLocation)
+    public SchoolClass(string className)
     {
         ClassName = className;
-        Students = new List<Student>();
+    }
+
+    public override string ToString()
+    {
+        return ClassName;
     }
 }
