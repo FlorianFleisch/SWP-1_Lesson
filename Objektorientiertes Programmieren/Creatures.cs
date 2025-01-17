@@ -25,7 +25,7 @@ namespace MyFirstCat
             Name = name;
         }
 
-        public string? Color2
+        public string? Color
 
         {
             get { return _Color; }
