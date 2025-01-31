@@ -27,6 +27,8 @@ namespace MyFirstCat
 
         public string? Color
 
+
+
         {
             get { return _Color; }
         }
